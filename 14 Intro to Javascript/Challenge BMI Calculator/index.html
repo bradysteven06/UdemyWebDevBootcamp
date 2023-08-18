@@ -9,14 +9,14 @@
 
     <script>
         // Your JavaScript code here
-        var weight = prompt("What is your weight?");
-        var height = prompt("What is your height?");
+        var weight = prompt("What is your weight in pounds?");
+        var height = prompt("What is your height in inches?");
         
         
         alert("Your BMI is " + bmiCalculator(height, weight))
 
         function bmiCalculator(height, weight) {
-            return (weight / Math.pow(height,2)).toFixed(2);
+            return ((weight / Math.pow(height,2))*703).toFixed(2);
         }
     </script>
 

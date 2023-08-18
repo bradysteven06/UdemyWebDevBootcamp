@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+
+    <script>
+        // Your JavaScript code here
+        var measurementSystem = prompt("Do you use the Metric or Imperial system?")
+        var weight;
+        var height;
+        var bmi;
+        
+        if (measurementSystem.toLowerCase() == "metric") {
+            weight = prompt("What is your weight in kilograms?");
+            height = prompt("What is your height in meters?");
+            bmi =  bmiCalculatorKilograms(height, weight);
+        } else if (measurementSystem.toLowerCase() == "imperial"){
+            weight = prompt("What is your weight in pounds?");
+            height = prompt("What is your height in inches?");
+            bmi = bmiCalculatorPounds(height, weight);
+        } else{
+            alert("Invalid measurement system.")
+        }
+
+        alert("Your BMI is " + bmi);
+
+        function bmiCalculatorKilograms(height, weight) {
+            return (weight / Math.pow(height,2)).toFixed(2);
+        }
+
+        function bmiCalculatorPounds(height, weight) {
+            return ((weight / Math.pow(height,2))*703).toFixed(2);
+        }
+
+        function displayBMI(bmi) {
+            if (bmi < 18.5) {
+                alert("Your BMI is " + bmi + ", so you are underweight.")
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                alert("Your BMI is " + bmi + ", so you have normal weight.")
+            } else {
+                alert("Your BMI is " + bmi + ", so you are overweight.")
+            }
+        }
+    </script>
+
+</body>
+</html>
