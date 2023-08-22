@@ -18,10 +18,23 @@
 
 
         function fizzBuzz(count) {
-            for (let i = 0; i < 10; i++) {
-            
-                console.log(count);
-                output.push(count);
+            for (let i = 0; i < 30; i++) {
+                if (count % 3 == 0) {
+                    if (count % 5 == 0) {
+                        console.log(count);
+                        output.push("Fizz Buzz");
+                    } else {
+                        console.log(count);
+                        output.push("Fizz");
+                    }
+                } else if (count % 5 == 0) {
+                    console.log(count);
+                    output.push("Buzz");
+                } else {
+                    console.log(count);
+                    output.push(count);
+                }
+                
                 count++;
             }
         }
