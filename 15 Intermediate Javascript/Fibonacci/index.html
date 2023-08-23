@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+
+    <script>
+        // Your JavaScript code here
+        
+        console.log(fibonacci(15))
+
+        function fibonacci(n) {
+            var output = [];
+            if (n === 1) {
+                output = [0];
+            }
+            else if (n === 2) {
+                output = [0,1];
+            }
+            else {
+                output = [0,1];
+                for (var i = 2; i < n; i++) {
+                    output.push(output[output.length-1] + output[output.length-2])
+                }
+            }
+            return output
+        }
+    </script>
+
+</body>
+</html>
+
+
